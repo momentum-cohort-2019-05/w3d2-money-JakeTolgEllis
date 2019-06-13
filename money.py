@@ -81,7 +81,8 @@ class Money:
         """
         if self.currency != other.currency:
             raise DifferentCurrencyError
-        self.amount = self.amount + other.amount    
+        self.amount = self.amount + other.amount
+        return self    
 
     def sub(self, other):
         """
@@ -90,16 +91,19 @@ class Money:
         """
         if self.currency != other.currency:
             raise DifferentCurrencyError
-        self.amount = self.amount - other.amount    
+        self.amount = self.amount - other.amount
+        return self  
 
     def mul(self, multiplier):
         """
         Multiply a money object by a number to get a new money object.
         """
         self.amount = self.amount * multiplier
+        return self
 
     def div(self, divisor):
         """
         Divide a money object by a number to get a new money object.
         """
         self.amount = self.amount / divisor
+        return self
